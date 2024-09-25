@@ -55,7 +55,7 @@
             justify-content: space-around;
             margin-bottom: 40px;
             padding: 0 10px;
-            flex-wrap: wrap; /* Allows wrapping of countdown items */
+            flex-wrap: nowrap; /* Prevent wrap */
         }
 
         .countdown div {
@@ -66,7 +66,7 @@
             height: 100px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin: 10px; /* Added margin for spacing when wrapped */
+            margin: 0 10px;
         }
 
         .countdown div h2 {
@@ -224,17 +224,21 @@
         }
 
         @media (max-width: 480px) {
-            .countdown {
-                flex-direction: column;
-                align-items: center; /* Center countdown items */
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
             }
 
             .countdown div {
-                margin-bottom: 15px;
+                width: 60px;
+                height: 60px;
             }
 
             .countdown div h2 {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .countdown div p {
@@ -272,7 +276,7 @@
     <div class="cloud cloud3"></div>
 
     <div class="container">
-        <h1>RR Vape --Coming Soon</h1>
+        <h1>RR Vape Coming Soon</h1>
 
         <!-- Image Section -->
         <div class="logo-container">
