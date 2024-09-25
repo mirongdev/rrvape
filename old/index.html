@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | RR Vape</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #87CEEB, #f5f7fa); /* Sky blue gradient */
+            color: #333;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 40px 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+        }
+
+        /* Countdown Timer - Circular Design */
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            padding: 0 10px;
+            flex-wrap: nowrap; /* Prevent wrap */
+        }
+
+        .countdown div {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
+        }
+
+        .countdown div h2 {
+            font-size: 36px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .countdown div p {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            margin: 0 10px;
+            color: #2c3e50;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        /* Image Styling */
+        .logo-container {
+            margin-bottom: 40px;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .logo-container img {
+            width: 250px;
+            height: 250px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Animation for Image Floating */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Cloud Styling */
+        .cloud {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.8;
+            animation: moveClouds linear infinite;
+            pointer-events: none;
+        }
+
+        /* Positioning the Clouds */
+        .cloud1 {
+            background: url('http://rrvape.id/cloud3.png') no-repeat;
+            background-size: contain;
+            width: 150px;
+            height: 80px;
+            top: 20%;
+            left: -20%;
+            animation-duration: 25s;
+        }
+
+        .cloud2 {
+            background: url('http://rrvape.id/cloud2.png') no-repeat;
+            background-size: contain;
+            width: 200px;
+            height: 100px;
+            top: 10%;
+            right: -25%;
+            animation-duration: 30s;
+        }
+
+        .cloud3 {
+            background: url('http://rrvape.id/cloud3.png') no-repeat;
+            background-size: contain;
+            width: 180px;
+            height: 90px;
+            bottom: 10%;
+            left: -15%;
+            animation-duration: 20s;
+        }
+
+        @keyframes moveClouds {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(2000px);
+            }
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .countdown div {
+                width: 80px;
+                height: 80px;
+            }
+
+            .countdown div h2 {
+                font-size: 28px;
+            }
+
+            .countdown div p {
+                font-size: 12px;
+            }
+
+            .logo-container img {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Adjust cloud sizes for smaller screens */
+            .cloud1 {
+                width: 100px;
+                height: 50px;
+            }
+
+            .cloud2 {
+                width: 150px;
+                height: 75px;
+            }
+
+            .cloud3 {
+                width: 130px;
+                height: 65px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .countdown div {
+                width: 60px;
+                height: 60px;
+            }
+
+            .countdown div h2 {
+                font-size: 22px;
+            }
+
+            .countdown div p {
+                font-size: 10px;
+            }
+
+            .logo-container img {
+                width: 150px;
+                height: 150px;
+            }
+
+            /* Further reduce cloud sizes for very small screens */
+            .cloud1 {
+                width: 80px;
+                height: 40px;
+            }
+
+            .cloud2 {
+                width: 100px;
+                height: 50px;
+            }
+
+            .cloud3 {
+                width: 90px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="container">
+        <h1>RR Vape Coming Soon</h1>
+
+        <!-- Image Section -->
+        <div class="logo-container">
+            <img src="http://rrvape.id/rr-logo.png" alt="RR Vape Logo">
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+            <div>
+                <h2 id="days">00</h2>
+                <p>Hari</p>
+            </div>
+            <div>
+                <h2 id="hours">00</h2>
+                <p>Jam</p>
+            </div>
+            <div>
+                <h2 id="minutes">00</h2>
+                <p>Menit</p>
+            </div>
+            <div>
+                <h2 id="seconds">00</h2>
+                <p>Detik</p>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <footer>
+            &copy; 2024 RR Vape. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Set the launch date
+        const launchDate = new Date("Nov 1, 2024 23:59:59").getTime();
+
+        // Update the countdown every second
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            // Time calculations
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the countdown is over, display a message
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.querySelector(".container").innerHTML = "We're Live!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
