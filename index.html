@@ -19,55 +19,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, #87CEEB, #f5f7fa);
+            background: linear-gradient(to bottom, #87CEEB, #f5f7fa); /* Sky blue gradient */
             color: #333;
             overflow: hidden;
             position: relative;
             padding: 20px;
-        }
-
-        .cloud-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: url('http://rrvape.id/cloud2.png') repeat-x;
-            background-size: contain;
-            animation: moveClouds 60s linear infinite;
-            pointer-events: none; /* Prevents cloud from interacting with user input */
-        }
-
-        .cloud-background2 {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: url('http://rrvape.id/cloud3.png') repeat-x;
-            background-size: contain;
-            animation: moveClouds2 80s linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes moveClouds {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 2000px 0;
-            }
-        }
-
-        @keyframes moveClouds2 {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: -2000px 0;
-            }
         }
 
         .container {
@@ -85,7 +41,6 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: #2c3e50;
-            font-weight: 600;
         }
 
         p {
@@ -94,11 +49,13 @@
             color: #7f8c8d;
         }
 
+        /* Countdown Timer - Circular Design */
         .countdown {
             display: flex;
             justify-content: space-around;
             margin-bottom: 40px;
             padding: 0 10px;
+            flex-wrap: wrap; /* Allows wrapping of countdown items */
         }
 
         .countdown div {
@@ -109,7 +66,7 @@
             height: 100px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
+            margin: 10px; /* Added margin for spacing when wrapped */
         }
 
         .countdown div h2 {
@@ -123,10 +80,7 @@
             color: #7f8c8d;
         }
 
-        .countdown div:hover {
-            transform: scale(1.1);
-        }
-
+        /* Social Icons */
         .social-icons a {
             margin: 0 10px;
             color: #2c3e50;
@@ -138,12 +92,93 @@
             color: #f39c12;
         }
 
+        /* Image Styling */
+        .logo-container {
+            margin-bottom: 40px;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .logo-container img {
+            width: 250px;
+            height: 250px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Animation for Image Floating */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Cloud Styling */
+        .cloud {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.8;
+            animation: moveClouds linear infinite;
+            pointer-events: none;
+        }
+
+        /* Positioning the Clouds */
+        .cloud1 {
+            background: url('http://rrvape.id/cloud3.png') no-repeat;
+            background-size: contain;
+            width: 150px;
+            height: 80px;
+            top: 20%;
+            left: -20%;
+            animation-duration: 25s;
+        }
+
+        .cloud2 {
+            background: url('http://rrvape.id/cloud2.png') no-repeat;
+            background-size: contain;
+            width: 200px;
+            height: 100px;
+            top: 10%;
+            right: -25%;
+            animation-duration: 30s;
+        }
+
+        .cloud3 {
+            background: url('http://rrvape.id/cloud3.png') no-repeat;
+            background-size: contain;
+            width: 180px;
+            height: 90px;
+            bottom: 10%;
+            left: -15%;
+            animation-duration: 20s;
+        }
+
+        @keyframes moveClouds {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(2000px);
+            }
+        }
+
+        /* Footer */
         footer {
             margin-top: 40px;
             font-size: 14px;
             color: #7f8c8d;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -165,33 +200,86 @@
             .countdown div p {
                 font-size: 12px;
             }
+
+            .logo-container img {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Adjust cloud sizes for smaller screens */
+            .cloud1 {
+                width: 100px;
+                height: 50px;
+            }
+
+            .cloud2 {
+                width: 150px;
+                height: 75px;
+            }
+
+            .cloud3 {
+                width: 130px;
+                height: 65px;
+            }
         }
 
         @media (max-width: 480px) {
             .countdown {
                 flex-direction: column;
+                align-items: center; /* Center countdown items */
             }
 
             .countdown div {
                 margin-bottom: 15px;
-                width: 70px;
-                height: 70px;
+            }
+
+            .countdown div h2 {
+                font-size: 24px;
+            }
+
+            .countdown div p {
+                font-size: 10px;
+            }
+
+            .logo-container img {
+                width: 150px;
+                height: 150px;
+            }
+
+            /* Further reduce cloud sizes for very small screens */
+            .cloud1 {
+                width: 80px;
+                height: 40px;
+            }
+
+            .cloud2 {
+                width: 100px;
+                height: 50px;
+            }
+
+            .cloud3 {
+                width: 90px;
+                height: 45px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="cloud-background"></div>
-    <div class="cloud-background2"></div>
+    <!-- Floating Clouds -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
 
     <div class="container">
         <h1>RR Vape Coming Soon</h1>
 
+        <!-- Image Section -->
         <div class="logo-container">
-            <img src="http://rrvape.id/rr-logo.png" alt="RR Vape Logo" style="width: 250px; height: 250px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); border-radius: 15px;">
+            <img src="http://rrvape.id/rr-logo.png" alt="RR Vape Logo">
         </div>
 
+        <!-- Countdown Timer -->
         <div class="countdown">
             <div>
                 <h2 id="days">00</h2>
@@ -211,6 +299,7 @@
             </div>
         </div>
 
+        <!-- Social Media Icons -->
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -223,22 +312,27 @@
     </div>
 
     <script>
+        // Set the launch date
         const launchDate = new Date("Nov 1, 2024 23:59:59").getTime();
 
+        // Update the countdown every second
         const countdown = setInterval(() => {
             const now = new Date().getTime();
             const timeLeft = launchDate - now;
 
+            // Time calculations
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+            // Display the result
             document.getElementById("days").innerHTML = days;
             document.getElementById("hours").innerHTML = hours;
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
 
+            // If the countdown is over, display a message
             if (timeLeft < 0) {
                 clearInterval(countdown);
                 document.querySelector(".container").innerHTML = "We're Live!";
