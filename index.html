@@ -85,7 +85,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    gap: 15px;
+    gap: 1px;
     flex-wrap: wrap; /* Membungkus elemen jika terlalu sempit */
 }
 
@@ -188,6 +188,12 @@ footer {
     }
 }
 
+@media (max-width: 300px) {
+    .countdown {
+ 
+    /* flex-wrap: none; Membungkus elemen jika terlalu sempit */
+}
+}
         a {
 
             color: #009fff;
@@ -205,7 +211,8 @@ footer {
     <!-- Konten utama -->
     <div class="center-content">
         <div class="content-box">
-            <h1>RR Vape - Coming Soon</h1>
+            <h1>RR Vape<h1>
+                <h2>Coming Soon</h2>
             <p>SIlahkan kembali berkunjung, website kami segera hadir!</p>
 
             <!-- Gambar/logo dengan efek melayang -->
