@@ -19,43 +19,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, #87CEEB, #f5f7fa); /* Sky blue gradient */
+            background: linear-gradient(to bottom, #87CEEB, #f5f7fa);
             color: #333;
             overflow: hidden;
             position: relative;
-            padding: 20px; /* Additional padding for responsiveness */
+            padding: 20px;
         }
 
         .container {
             text-align: center;
             max-width: 700px;
-            padding: 40px 20px; /* Adjusted padding for better spacing */
+            padding: 40px 20px;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 2;
             position: relative;
-            margin: 20px 0; /* Added margin to prevent collision with top and bottom */
+            margin: 20px 0;
         }
 
         h1 {
-            font-size: 2.5rem; /* Responsive font size */
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #2c3e50;
+            font-weight: 600;
         }
 
         p {
-            font-size: 1.2rem; /* Responsive font size */
+            font-size: 1.2rem;
             margin-bottom: 40px;
             color: #7f8c8d;
         }
 
-        /* Countdown Timer - Circular Design */
         .countdown {
             display: flex;
-            justify-content: space-around; /* Center countdown items */
+            justify-content: space-around;
             margin-bottom: 40px;
-            padding: 0 10px; /* Adjust padding for better spacing */
+            padding: 0 10px;
         }
 
         .countdown div {
@@ -66,6 +66,7 @@
             height: 100px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
         }
 
         .countdown div h2 {
@@ -79,7 +80,10 @@
             color: #7f8c8d;
         }
 
-        /* Social Icons */
+        .countdown div:hover {
+            transform: scale(1.1);
+        }
+
         .social-icons a {
             margin: 0 10px;
             color: #2c3e50;
@@ -91,7 +95,6 @@
             color: #f39c12;
         }
 
-        /* Image Styling */
         .logo-container {
             margin-bottom: 40px;
             position: relative;
@@ -102,11 +105,11 @@
             width: 250px;
             height: 250px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 15px; /* Kotak dengan sudut membulat */
+            border-radius: 15px;
             object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Animation for Image Floating */
         @keyframes float {
             0%, 100% {
                 transform: translateY(0);
@@ -118,46 +121,15 @@
 
         .logo-container img:hover {
             transform: scale(1.05);
-            transition: transform 0.3s ease-in-out;
         }
 
-        /* Cloud Styling */
         .cloud {
             position: absolute;
             z-index: 1;
             opacity: 0.8;
             animation: moveClouds linear infinite;
-        }
-
-        /* Positioning the Clouds */
-        .cloud1 {
-            background: url('http://rrvape.id/cloud3.png') no-repeat;
             background-size: contain;
-            width: 150px;
-            height: 80px;
-            top: 20%;
-            left: -20%;
-            animation-duration: 25s;
-        }
-
-        .cloud2 {
-            background: url('http://rrvape.id/cloud2.png') no-repeat;
-            background-size: contain;
-            width: 200px;
-            height: 100px;
-            top: 10%;
-            right: -25%;
-            animation-duration: 30s;
-        }
-
-        .cloud3 {
-            background: url('http://rrvape.id/cloud3.png') no-repeat;
-            background-size: contain;
-            width: 180px;
-            height: 90px;
-            bottom: 10%;
-            left: -15%;
-            animation-duration: 20s;
+            background-repeat: no-repeat;
         }
 
         @keyframes moveClouds {
@@ -169,59 +141,62 @@
             }
         }
 
-        /* Footer */
         footer {
             margin-top: 40px;
             font-size: 14px;
             color: #7f8c8d;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem; /* Smaller font size on mobile */
+                font-size: 2rem;
             }
 
             p {
-                font-size: 1rem; /* Smaller font size on mobile */
+                font-size: 1rem;
             }
 
             .countdown div {
-                width: 80px; /* Smaller countdown div on mobile */
-                height: 80px; /* Smaller countdown div on mobile */
+                width: 80px;
+                height: 80px;
             }
 
             .countdown div h2 {
-                font-size: 28px; /* Smaller font size on mobile */
+                font-size: 28px;
             }
 
             .countdown div p {
-                font-size: 12px; /* Smaller font size on mobile */
+                font-size: 12px;
             }
 
             .logo-container img {
-                width: 200px; /* Adjust logo size on mobile */
-                height: 200px; /* Adjust logo size on mobile */
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown {
+                flex-direction: column;
+            }
+
+            .countdown div {
+                margin-bottom: 15px;
+                width: 70px;
+                height: 70px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Clouds -->
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-
     <div class="container">
-        <h1>RR Vape Coming Soon</h1>
-    
-        <!-- Image Section -->
+        <h1>RR Vape - Coming Soon</h1>
+
         <div class="logo-container">
             <img src="http://rrvape.id/rr-logo.png" alt="RR Vape Logo">
         </div>
 
-        <!-- Countdown Timer -->
         <div class="countdown">
             <div>
                 <h2 id="days">00</h2>
@@ -241,7 +216,6 @@
             </div>
         </div>
 
-        <!-- Social Media Icons -->
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -254,33 +228,52 @@
     </div>
 
     <script>
-        // Set the launch date
         const launchDate = new Date("Nov 1, 2024 23:59:59").getTime();
 
-        // Update the countdown every second
         const countdown = setInterval(() => {
             const now = new Date().getTime();
             const timeLeft = launchDate - now;
 
-            // Time calculations
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            // Display the result
             document.getElementById("days").innerHTML = days;
             document.getElementById("hours").innerHTML = hours;
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
 
-            // If the countdown is over, display a message
             if (timeLeft < 0) {
                 clearInterval(countdown);
                 document.querySelector(".container").innerHTML = "We're Live!";
             }
         }, 1000);
+
+        // Add clouds dynamically
+        const cloudsData = [
+            { className: 'cloud cloud1', background: 'http://rrvape.id/cloud3.png', width: 150, height: 80, top: '20%', left: '-20%', duration: 25000 },
+            { className: 'cloud cloud2', background: 'http://rrvape.id/cloud2.png', width: 200, height: 100, top: '10%', right: '-25%', duration: 30000 },
+            { className: 'cloud cloud3', background: 'http://rrvape.id/cloud3.png', width: 180, height: 90, bottom: '10%', left: '-15%', duration: 20000 }
+        ];
+
+        cloudsData.forEach(cloud => {
+            const cloudDiv = document.createElement('div');
+            cloudDiv.className = cloud.className;
+            cloudDiv.style.backgroundImage = `url(${cloud.background})`;
+            cloudDiv.style.width = `${cloud.width}px`;
+            cloudDiv.style.height = `${cloud.height}px`;
+            cloudDiv.style.position = 'absolute';
+            cloudDiv.style.zIndex = '1';
+            cloudDiv.style.opacity = '0.8';
+            cloudDiv.style.animation = `moveClouds ${cloud.duration / 1000}s linear infinite`;
+            if (cloud.top) cloudDiv.style.top = cloud.top;
+            if (cloud.left) cloudDiv.style.left = cloud.left;
+            if (cloud.right) cloudDiv.style.right = cloud.right;
+            if (cloud.bottom) cloudDiv.style.bottom = cloud.bottom;
+            
+            document.body.appendChild(cloudDiv);
+        });
     </script>
 </body>
 </html>
-
